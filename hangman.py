@@ -1,5 +1,64 @@
 #Hangman Game
 
+#skins
+
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
 #importing random module
 
 import random
@@ -31,12 +90,15 @@ while live != 0:
             letter = chosen_word[position]
             if guess in letter:                  
                   display[position] = letter
+                  
                   print(display)
       #cheking if its incorrect and -1 if not
       if guess not in chosen_word:
             print("you are wrong")
             live -= 1
-            print(f"you're life left: {live}") 
+            print(f"you're life left: {live}")
+            print(stages[live]) 
 # loseing the game
 if live == 0:
       print("you lose the game!!!")
+
